@@ -21,7 +21,9 @@ public class ChessPiece {
         }
         this.position = targetPosition;
     }
-
+public boolean test(){
+        return false;
+}
     protected boolean baseMoveCheck(Position targerPosition, Chessboard chessboard){
         if (!isAlive){
             return false;
