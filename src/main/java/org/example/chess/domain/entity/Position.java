@@ -60,8 +60,7 @@ public class Position {
     public int getY(){
         return y;
     }
-
     public String test(){
-        return "I am NPC.";
+        return "I am ChenGuo";
     }
 }
