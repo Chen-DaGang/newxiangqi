@@ -3,7 +3,7 @@ package org.example.chess.domain.entity;
 import org.example.chess.domain.enums.ChessColor;
 import org.example.chess.domain.enums.ChessPieceType;
 
-public class ChessPiece {
+public abstract class ChessPiece {
     private final ChessPieceType type;
     private final ChessColor color;
     private Position position;
@@ -21,9 +21,7 @@ public class ChessPiece {
         }
         this.position = targetPosition;
     }
-public boolean test(){
-        return false;
-}
+
     protected boolean baseMoveCheck(Position targerPosition, Chessboard chessboard){
         if (!isAlive){
             return false;
@@ -40,6 +38,7 @@ public boolean test(){
 
         return true;
     }
+    public abstract boolean isValidMove(Position position, Chessboard chessboard);
 
     public ChessPieceType getType() {return type;}
 
@@ -55,4 +54,5 @@ public boolean test(){
     public String toString(){
         return color.getDesc() + type.getDesc() + "@" + position;
     }
+    public abstract String getSymbol();
 }
