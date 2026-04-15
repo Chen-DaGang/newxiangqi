@@ -1,5 +1,6 @@
 package org.example.chess.domain.entity;
 
+import org.example.chess.domain.ChessPieceLocation;
 import org.example.chess.domain.enums.ChessColor;
 
 import java.util.HashMap;
@@ -139,5 +140,19 @@ public class Chessboard {
     }
     public ChessPiece[][] getBoardArray(){
         return board;
+    }
+
+    public java.util.List<ChessPieceLocation> getAllPieceLocations(){
+        java.util.List<ChessPieceLocation> list = new java.util.ArrayList<>();
+
+        for (int x = 0; x < COLUMNS; x++) {
+            for (int y = 0; y < ROWS; y++) {
+                ChessPiece piece = board[x][y];
+                if (piece != null && piece.isAlive()){
+                    list.add(new ChessPieceLocation(piece.getSymbol(),piece.getPosition()));
+                }
+            }
+        }
+        return list;
     }
 }
