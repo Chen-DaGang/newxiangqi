@@ -21,7 +21,7 @@ public class ChessGame {
         Position from = Position.of(fromX,fromY);
         Position to = Position.of(toX,toY);
 
-        boolean success = MoveHandler.isMoveValid(chessboard,from,to);
+        boolean success = Move.isMoveValid(chessboard,from,to);
 
         if (success){
             boolean hasCapture = chessboard.getPieceAt(to) != null;
