@@ -17,6 +17,9 @@ public class GameStatus {
         this.gameStatus = STATUS_READY;
     }
 
+    public void switchPlayer(){
+        currentPlayerIndex = (currentPlayerIndex==0) ? 1 : 0;
+    }
     public Player[] getPlayers(){return players;}
     public int getCurrentPlayerIndex() { return currentPlayerIndex; }
     public int getGameStatus() { return gameStatus; }
@@ -24,6 +27,7 @@ public class GameStatus {
     public int getWinner() { return winner; }
     public void setWinner(int winner) { this.winner = winner; }
     public int getNoCaptureSteps() { return noCaptureSteps; }
+
     public void incrementNoCaptureSteps() { noCaptureSteps++; }
     public void resetNoCaptureSteps() { noCaptureSteps = 0; }
 }

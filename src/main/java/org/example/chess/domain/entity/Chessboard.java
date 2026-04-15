@@ -147,7 +147,7 @@ public class Chessboard {
 
         for (int x = 0; x < COLUMNS; x++) {
             for (int y = 0; y < ROWS; y++) {
-                ChessPiece piece = board[x][y];
+                ChessPiece piece = getPieceAt(Position.of(x, y));
                 if (piece != null && piece.isAlive()){
                     list.add(new ChessPieceLocation(piece.getSymbol(),piece.getPosition()));
                 }
